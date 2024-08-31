@@ -37,7 +37,7 @@ public class EmpFragment extends Fragment {
     TextInputLayout wrpFirstName, wrpLastName, wrpEmail, wrpAddress, wrpPhoneNo;
     Spinner spnGender;
     Button btnAge, btnNext;
-    TextView tvAge;
+    TextView empAge;
     String gender;
     private EmpActivity empActivity;
 
@@ -109,7 +109,7 @@ public class EmpFragment extends Fragment {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                         int age = getAge(year, month, dayOfMonth);
-                        tvAge.setText("Age: " + age + " years");
+                        empAge.setText("Age: " + age + " years");
                     }
                 }, year, month, day);
                 pickerDialog.getDatePicker().setMaxDate(new Date().getTime());
@@ -147,7 +147,7 @@ public class EmpFragment extends Fragment {
                        ||address.isEmpty()){
                    Toast.makeText(getContext(),"Please Enter All Fields",Toast.LENGTH_SHORT);
                }else {
-                    String age = tvAge.getText().toString();
+                    String age = empAge.getText().toString();
                     Employee s =new Employee();
                     s.setfName(fname);
                     s.setEmail(email);
@@ -155,7 +155,7 @@ public class EmpFragment extends Fragment {
                     s.setPhoneNo(phoneNo);
                     s.setAge(age);
                     s.setGender(gender);
-                    empActivity.loadFragment(new empRegPage2());
+                    empActivity.loadFragment(new empRegPage2(s));
                 }
             }
         });
@@ -175,7 +175,9 @@ public class EmpFragment extends Fragment {
         wrpPhoneNo=view.findViewById(R.id.empPhone);
         wrpAddress=view.findViewById(R.id.empAddress);
         btnAge=view.findViewById(R.id.ageBtn);
+        empAge=view.findViewById(R.id.empAge);
         spnGender=view.findViewById(R.id.empGender);
+        btnNext=view.findViewById(R.id.next);
     }
 
     private void onTextChangeListner(TextInputLayout textInputLayout){
