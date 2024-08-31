@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
 
 public class EmpActivity extends AppCompatActivity {
 
@@ -15,14 +16,14 @@ public class EmpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_emp);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        EmpFragment empFragment = EmpFragment.newInstance("p1","p2");
+        loadFragment(empFragment);
     }
 
-    private void loadFragment(){
-        getSupportFragmentManager().beginTransaction().replace(R.id.)
+    private void loadFragment(Fragment empFragment){
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.empRegForm,empFragment)
+                .commit();
     }
 }
