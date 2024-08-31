@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">MCA3</string>
+    <string name="my_name">Abhi Shah</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirmPassword">Confirm Password</string>
+    <string name="phone">Phone Number</string>
+    <string name="age">Age</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="gender">Gender</string>
+    <string name="track">Track</string>
+    <string name="insta">Insta</string>
+    <string name="writing">Writing</string>
+    <string name="reading">Reading</string>
+    <string name="dance">Dance</string>
+    <string name="submit">Submit</string>
+
+    <string-array name="tracks">
+        <item>Web</item>
+        <item>Machine Learning</item>
+        <item>Networking</item>
+    </string-array>
+
+    <string-array name="dept">
+        <item>IT</item>
+        <item>Marketing</item>
+        <item>Kachra Uthane Wala</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="apply">Apply</string>
+    <string name="qualification">Qualification</string>
+    <string name="position">Position</string>
+    <string name="_2000000">2000000</string>
+    <string name="_10">10</string>
+    <string name="accenture">Accenture</string>
+    <string name="mello">Mello</string>
+</resources>
