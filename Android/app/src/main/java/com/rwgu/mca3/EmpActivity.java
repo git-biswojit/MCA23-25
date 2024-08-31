@@ -20,7 +20,7 @@ public class EmpActivity extends AppCompatActivity {
         loadFragment(empFragment);
     }
 
-    private void loadFragment(Fragment empFragment){
+    public void loadFragment(Fragment empFragment){
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.empRegForm,empFragment)
