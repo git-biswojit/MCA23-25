@@ -1,0 +1,99 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Apr  6 10:13:07 2021
+
+@author: jaypa
+"""
+
+import pandas as pd
+
+# print(pd.__version__)
+
+# a = [1, 7, 2]
+
+# myvar = pd.Series(a)
+
+# print(myvar)
+
+
+# a = [1, 7, 2]
+
+# myvar = pd.Series(a, index = ["x", "y", "z"])
+
+# print(myvar)
+
+
+# Data Frame
+# data = {
+#   "calories": [500, 6000, 790],
+#   "duration": [40, 75, 65]
+# }
+
+# # load data into a DataFrame object:
+# df = pd.DataFrame(data)
+
+# # print(df)
+# print(df.loc[1])
+#========================================
+
+
+#Read CSV
+
+# df = pd.read_csv("data1.csv")
+
+# print(df)
+
+#========================================
+
+
+# Head Tail
+
+df = pd.read_csv('data1.csv')
+
+# print(df.head())
+
+# print(df.tail()) 
+# print(df[3:5])
+
+# print(df.info())
+#========================================
+
+
+# Clean Data
+# Empty Cell
+
+# df = pd.read_csv('data1.csv')
+# # print(df)
+
+# new_df = df.dropna()
+
+# print(new_df.to_string())
+
+#========================================
+
+# Mean Replace Blank
+
+# df = pd.read_csv('data1.csv')
+
+# x = df["Marks"].mean()
+# print(x)
+
+# df["Marks"].fillna(x, inplace = True)
+
+# print(df.to_string())
+
+#========================================
+
+#Replace   & Duplicate
+
+# df = pd.read_csv('data1.csv')
+# print(df.describe())
+# print(df.to_string())
+
+# df.loc[9, 'Roll No'] = 11
+
+# print(df)
+
+# print(df.duplicated())
+
+#========================================

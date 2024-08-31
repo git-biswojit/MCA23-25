@@ -1,0 +1,15 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Mar 23 15:42:45 2021
+
+@author: jaypa
+"""
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+xpoints = np.array([3, 8])
+ypoints = np.array([6, 10])
+
+plt.plot(xpoints, ypoints,marker="d",linewidth=10)
+plt.show()

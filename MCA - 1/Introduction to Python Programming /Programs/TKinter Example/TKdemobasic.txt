@@ -1,0 +1,52 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jan 27 15:01:57 2022
+
+@author: jaypa
+"""
+
+
+
+
+
+from tkinter import Tk, Canvas
+from tkinter.ttk import *
+
+def show():
+    input_roll = e1.get()
+    lblroll.config(text = "Roll No==> "+ input_roll)
+    input_name = e2.get()
+    lblname.config(text = "Name==> "+ input_name)
+    input_course = e3.get()
+    lblcourse.config(text = "Course==> "+ input_course)
+    
+
+def reset():
+    e1.delete(0, 'end')
+    e2.delete(0, 'end')
+    e3.delete(0, 'end')
+    lblroll.config(text = "")
+    lblname.config(text = "")
+    lblcourse.config(text = "")
+
+top = Tk()
+roll = Label(top, text = "Roll No.").grid(row = 0, column = 0)
+e1 = Entry(top)
+e1.grid(row=0, column=1)
+name = Label(top, text = "Name").grid(row = 1, column = 0)
+e2 = Entry(top)
+e2.grid(row=1, column=1)
+course = Label(top, text = "Course").grid(row = 2, column = 0)
+e3 = Entry(top)
+e3.grid(row=2, column=1)
+btnsubmit = Button(top, text = "Submit", command = show)
+btnsubmit.grid(row = 4, column = 1)
+btnreset = Button(top, text = "Reset", command = reset)
+btnreset.grid(row = 4, column = 0)
+lblroll = Label(top, text="")
+lblroll.grid(row = 5, column = 1)
+lblname = Label(top, text="")
+lblname.grid(row = 6, column = 1)
+lblcourse = Label(top, text="")
+lblcourse.grid(row = 7, column = 1)
+top.mainloop()

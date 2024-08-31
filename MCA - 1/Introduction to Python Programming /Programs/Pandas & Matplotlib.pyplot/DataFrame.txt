@@ -1,0 +1,91 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Apr  6 18:27:02 2021
+
+@author: jaypa
+"""
+
+import pandas
+
+excel_data_df = pandas.read_excel('student.xlsx', sheet_name='Sheet1')
+
+# print whole sheet data
+print(excel_data_df)
+# import matplotlib.pyplot as plt
+# import pandas as pd
+# # import xlrds
+
+# df=pd.read_excel("student.xlsx",sheet_name="Sheet1")
+# print(df)
+
+# No of Row & columns
+# print(df.shape)
+
+# r,c=df.shape
+# print(r)
+# print(c)
+
+# Head Tail
+
+# print(df.head())
+# print(df.tail())
+
+# print(df[5:10])
+
+# to retrive columns
+# print(df.columns)
+# print(df.Student_Name)
+# lst=[[1,2,3],[1,2,3]]
+# print(df[['SID','Student_Name']])
+
+#  MAX Min
+# print(df['Age'].min())
+
+# Statistical Information
+# print(df.describe())
+
+# Queries on Data
+# print(df[df.Age>20])
+
+# res=df[['Student_Name']][df.Age>22]
+# print(res)
+
+
+# Data Visualization
+
+# x=df['SID']
+# y=df["Percentage"]
+# plt.bar(x,y,label="Percentage",color="green")
+# plt.xlabel("Student ID")
+# plt.ylabel("Student Percentage")
+# plt.title("Student Information")
+# plt.legend()
+# plt.show()
+
+# =============================================
+# x=df['SID']
+# y=df["Percentage_Past"]
+# x1=df['SID']
+# y1=df["Percentage"]
+
+# plt.bar(x,y,label="Percentage_Past_SID",color="red")
+# plt.bar(x1,y1,label="Percentage_SID",color="green")
+
+# plt.xlabel("Student ID")
+# plt.ylabel("Student Percentage")
+# plt.title("Student Result")
+# plt.legend()
+# plt.show()
+
+# ================================================
+
+# Line Chart
+
+# x=df["SID"]
+# y=df["Per(%)"]
+# plt.plot(x,y,label="Per(%)",color="blue")
+# plt.xlabel("Student ID")
+# plt.ylabel("Student Percentage")
+# plt.title("Student Information")
+# plt.legend()
+# plt.show()

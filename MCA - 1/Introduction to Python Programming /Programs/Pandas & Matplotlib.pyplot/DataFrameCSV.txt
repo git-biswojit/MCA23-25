@@ -1,0 +1,148 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Feb  4 10:56:48 2022
+
+@author: jaypa
+"""
+
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Apr  6 18:27:02 2021
+
+@author: jaypa
+"""
+
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# df=pd.read_csv("student.csv")
+# print(df[["SID","Student_Name"]])
+
+# No of Row & columns
+# print(df.shape)
+
+# r,c=df.shape
+# print(r)
+# print(c)
+
+# Head Tail
+# print(df.head())
+# print(df.tail())
+
+# print(df[5:10])
+
+# to retrive columns
+# print(df.columns)
+# print(df.Student_Name)
+# print(df[['SID','Student_Name']])
+
+#  MAX Min
+# print(df['Age'].min())
+# 
+# Statistical Information
+# print(df.describe())
+
+# Queries on Data
+# print(df[df.Age>20])
+
+# res=(df[['Student_Name']][df.Age>22]).count()
+# print(res)
+
+
+# Data Visualization
+# df=pd.read_csv("student.csv")
+# x=df['SID']
+# y=df["Percentage"]
+# plt.bar(x,y,label="Percentage",color="blue")
+# plt.xlabel("Student ID")
+# plt.ylabel("Student Percentage")
+# plt.title("Student Information")
+# plt.legend()
+# plt.show()
+
+# =============================================
+# df=pd.read_csv("student.csv")
+# x=df['SID']
+# y=df["Percentage_Past"]
+# x1=df['SID']
+# y1=df["Percentage"]
+
+# plt.bar(x,y,label="Percentage_Past_SID",color="red")
+# plt.bar(x1,y1,label="Percentage_SID",color="green")
+
+# plt.xlabel("Student ID")
+# plt.ylabel("Student Percentage")
+# plt.title("Student Result")
+# plt.legend()
+# plt.show()
+
+# ================================================
+
+# Line Chart
+# df=pd.read_csv("student.csv")
+# x=df["SID"]
+# y=df["Percentage"]
+# plt.plot(x,y,label="Per(%)",color="blue")
+# plt.xlabel("Student ID")
+# plt.ylabel("Student Percentage")
+# plt.title("Student Information")
+# plt.legend()
+# plt.show()
+
+# ==================================================
+ # Pie Chart
+# import matplotlib.pyplot as plt
+# import numpy as np
+
+# y = np.array([35, 20, 25, 15, 5])
+# mylabels = ["GOI", "State GOI", "PVT", "Public","Other"]
+
+# plt.pie(y, labels = mylabels)
+# plt.show() 
+
+# ==================================================
+
+#  # Pie Chart csv
+
+# df=pd.read_csv("student.csv")
+# # print(df.describe())
+# x=df['Subject']
+# cntwad=0
+# cntpy=0
+# cntnet=0
+# # cntwad=df[df.Subject=="WAD"].value_counts().count() 
+# # cntpy=df[df.Subject=="Python"].value_counts().count()
+# # cntnet=df[df.Subject=="Networking"].value_counts().count()
+# for i in x:
+#     if i=="WAD":
+#         cntwad+=1
+#     elif i=="Python":
+#         cntpy+=1
+#     else:
+#         cntnet+=1
+# subcnt=[cntwad,cntpy,cntnet]
+# mylabels = ["WAD"+str(cntwad), "Python"+str(cntpy),"Networking"+str(cntnet)]
+# plt.pie(subcnt, labels = mylabels)
+# plt.title("Student Subject")
+# plt.show()
+
+# ==================================================
+
+ # Pie Chart csv percentage
+# df=pd.read_csv("student.csv")
+# x=df['Percentage']
+# cntlf=0
+# cntfs=0
+# cntngs=0
+# for i in x:
+#     if i<=50:
+#         cntlf+=1
+#     elif i>50 and i<70:
+#         cntfs+=1
+#     else:
+#         cntngs+=1
+# subcnt=[cntlf,cntfs,cntngs]
+# mylabels = ["<50", " >50 and <70",">70"]
+# plt.pie(subcnt, labels = mylabels)
+# plt.title("Student Percentage")
+# plt.show()

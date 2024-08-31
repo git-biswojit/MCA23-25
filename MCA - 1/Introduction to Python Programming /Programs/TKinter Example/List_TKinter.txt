@@ -1,0 +1,36 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jan 27 15:01:57 2022
+
+@author: jaypa
+"""
+
+
+
+
+from tkinter import *
+
+lst = []
+
+def add():
+    item = e1.get()
+    lst.append(item)
+    e1.delete(0, 'end')
+   
+
+def show():
+    lbllist.config(text = lst)
+    
+
+
+top = Tk()
+label1 = Label(top, text = "Enter the value").grid(row = 0, column = 0)
+e1 = Entry(top)
+e1.grid(row=0, column=1)
+btnsubmit = Button(top, text = "Submit", command = add)
+btnsubmit.grid(row = 1, column = 3) 
+btnsubmit = Button(top, text = "Show", command = show)
+btnsubmit.grid(row = 1, column = 4) 
+lbllist = Label(top, text="")
+lbllist.grid(row = 2, column = 0)
+top.mainloop()

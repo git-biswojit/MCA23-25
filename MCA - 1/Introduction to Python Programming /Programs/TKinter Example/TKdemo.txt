@@ -1,0 +1,22 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Feb 18 23:43:23 2021
+
+@author: jaypa
+"""
+
+from tkinter import Tk, Button
+count = 0 # Records the number of button presses
+
+def update():
+    global count, b
+    count += 1
+    b.config(text="Click Count = " + str(count))
+    print("Updating")
+    
+root = Tk()
+b = Button(root)
+s="yellow";
+b.configure(background=s, text="Click Count = 0", command=update)
+b.pack()
+root.mainloop()
