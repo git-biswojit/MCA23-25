@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -19,6 +20,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -40,11 +44,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+//            return insets;
+//        });
 
         init();
         clickListeners();
@@ -120,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
 //                    b.putString("track",track);
 //                    b.putString("hobby",hobby);
 //                    i.putExtras(b);
-//                    i.putExtra("student",s);
+                    i.putExtra("student",s);
                     startActivity(i);
                 }
             }
@@ -161,6 +165,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init() {
+        StudentFragment studentFragment = StudentFragment.newInstance("param1","param2");
+        loadFragment(studentFragment);
+
+
         etName = findViewById(R.id.etName);
         etEmail = findViewById(R.id.etEmail);
         etPwd = findViewById(R.id.etPassword);
@@ -179,5 +187,12 @@ public class MainActivity extends AppCompatActivity {
 
     private int getAge(int year, int month, int day) {
         return Period.between(LocalDate.of(year, month, day), LocalDate.now()).getYears();
+    }
+
+    private void loadFragment(Fragment fragment){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frag1,fragment);
+        fragmentTransaction.commit();
     }
 }
