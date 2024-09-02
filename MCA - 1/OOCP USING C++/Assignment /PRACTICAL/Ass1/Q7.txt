@@ -1,0 +1,37 @@
+						    DEPARTMENT OF COMPUTER SCIENCE
+							  GUJARAT UNIVERSITY
+ NAME		:  NAINESH KAHAR						     	PAGE NO.	:    
+ COURSE		:  MCA 2							     	DATE		:  07  /  03  /  2024
+ ROLL NO.	:  16
+ SUBJECT	:  OPERATING SYSTEM
+ ASSIGNMENT	:  1
+ PROGRAM NO.	:  7
+ SUBMITTED TO	:  PROF. JAY PATEL
+========================================================================================================================================
+ P.7	THE SCRIPT DISPLAYS A LIST OF ALL FILES IN THE CURRENT DIRECTORY TO WHICH YOU HAVE READ, WRITE AND EXECUTE PERMISSIONS.
+========================================================================================================================================
+ 1. vi p7.sh
+
+  1 for file in $(ls)
+  2 do
+  3 if [ -r $file ] && [ -w $file ] && [ -x $file ]
+  4 then
+  5 echo $file
+  6 fi
+  7 done
+
+ 2.ls -l
+
+ -> -rw-rw-r-- 1 mca2316 mca2316 1474 Feb 23 06:21 consumer.c
+ -> -rwxrw-r-- 1 mca2316 mca2316  150 Mar  5 04:38 file1.txt
+ -> ----rwx--- 1 mca2316 mca2316    1 Feb 23 06:42 p1.sh
+ -> -rw-rw-r-- 1 mca2316 mca2316   95 Mar  5 05:18 p7.sh
+ -> -rwxrwxrwx 1 mca2316 mca2316 7934 Feb 23 06:24 producer
+ -> -rw-rw-r-- 1 mca2316 mca2316 1682 Feb 23 06:38 producer.c
+
+ 3. sh p7.sh
+========================================================================================================================================
+ OUTPUT :
+
+ -> file1.txt
+ -> producer

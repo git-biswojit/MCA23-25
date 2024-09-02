@@ -1,0 +1,86 @@
+						    DEPARTMENT OF COMPUTER SCIENCE
+							  GUJARAT UNIVERSITY
+ NAME		:  NAINESH KAHAR						     	PAGE NO.	:    
+ COURSE		:  MCA 2							     	DATE		:  07  /  03  /  2024
+ ROLL NO.	:  16
+ SUBJECT	:  OPERATING SYSTEM
+ ASSIGNMENT	:  1
+ PROGRAM NO.	:  5
+ SUBMITTED TO	:  PROF. JAY PATEL
+========================================================================================================================================
+ P.5	WRITE A SHELL SCRIPT TO DISPLAY THE MENU DRIVEN INTERFACE :- 1) LIST ALL FILES OF THE CURRENT DIRECTORY 2) 
+	PRINT THE CURRENT DIRECTORY 3) PRINT THE DATE 4) PRINT THE USERS OTHERWISE DISPLAY "INVALID OPTION".
+========================================================================================================================================
+ while true; do
+
+    echo "Menu:"
+    echo "1) List all files of the current directory"
+    echo "2) Print the current directory"
+    echo "3) Print the date"
+    echo "4) Print the users"
+    echo "5) Quit"
+
+    read -p "Enter your choice (1-5): " choice
+
+    case $choice in
+        1)
+            # List all files in the current directory
+            ls
+            ;;
+        2)
+            # Print the current directory
+            pwd
+            ;;
+        3)
+            # Print the date
+            date
+            ;;
+        4)
+            # Print the users
+            who
+	5) 
+	    exit()
+
+========================================================================================================================================
+ OUTPUT :
+
+ Menu:
+ 1) List all files of the current directory
+ 2) Print the current directory
+ 3) Print the date
+ 4) Print the users
+ 5) Quit
+ Enter your choice (1-5): 1
+ 14.sh  7.sh    consumer.c     filename.sh  file.txt  loop1.sh  loop.sh      prime.sh    program.c   spider.sh  
+ a.out   employees.txt  file.sh      input.sh  loop2.sh  pracprog1.c  producer    value.sh
+ 5.sh   arr.sh  emp.sh     files.sh     logcat    loop3.sh  pracprog.sh  producer.c  welcome.sh
+ Menu:
+ 1) List all files of the current directory
+ 2) Print the current directory
+ 3) Print the date
+ 4) Print the users
+ 5) Quit
+
+ Enter your choice (1-5): 2
+ /home/mca2316/nainesh
+
+ Menu:
+ 1) List all files of the current directory
+ 2) Print the current directory
+ 3) Print the date
+ 4) Print the users
+ 5) Quit
+ Enter your choice (1-5):Tue Mar  5 10:27:06 IST 2024
+ Menu:
+ 1) List all files of the current directory
+ 2) Print the current directory
+ 3) Print the date
+ 4) Print the users
+ 5) Quit
+ Enter your choice (1-5):
+ 4
+ mca2314  pts/0        2024-03-05 10:11 (172.16.116.39)
+ mca2315  pts/1        2024-03-05 10:12 (172.16.116.36)
+ mca2316  pts/2        2024-03-05 10:16 (172.16.116.16)
+ mca2317  pts/3        2024-03-05 10:16 (172.16.116.18)
+ mca2318  pts/4        2024-03-05 10:16 (172.16.116.37)

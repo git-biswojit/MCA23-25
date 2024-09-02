@@ -1,0 +1,68 @@
+						    DEPARTMENT OF COMPUTER SCIENCE
+							  GUJARAT UNIVERSITY
+ NAME		:  NAINESH KAHAR						     	PAGE NO.	:    
+ COURSE		:  MCA 2							     	DATE		:  07  /  03  /  2024
+ ROLL NO.	:  16
+ SUBJECT	:  OPERATING SYSTEM
+ ASSIGNMENT	:  1
+ PROGRAM NO.	:  4
+ SUBMITTED TO	:  PROF. JAY PATEL
+========================================================================================================================================
+ P.4	THE SCRIPT WILL RECEIVE THE FILENAME OR FILENAME WITH ITS FULL PATH, 
+	THE SCRIPT SHOULD OBTAIN INFORMATION ABOUT THIS FILE AS GIVEN BY "LS -L" AND DISPLAY IT IN PROPER FORMAT.
+	E.G. FILENAME : , FILE ACCESS PERMISSIONS : , NUMBER OF LINKS : , OWNER OF THE FILE : , GROUP TO WHICH BELONGS :,
+	SIZE OF FILE : , FILE MODIFICATION DATE : , FILE MODIFICATION TIME :
+========================================================================================================================================
+
+ display_file_info() {
+    filename=$1
+
+    # Check if the file exists
+    if [ ! -e "$filename" ]; then
+        echo "Error: File '$filename' does not exist."
+        return
+    fi
+
+    # Get file information using 'ls -l'
+    file_info=$(ls -l "$filename")
+
+    # Extract information from the 'ls -l' output
+    file_permissions=$(echo "$file_info" | cut -d ' ' -f 1)
+    num_links=$(echo "$file_info" | cut -d ' ' -f 2)
+    owner=$(echo "$file_info" | cut -d ' ' -f 3)
+    group=$(echo "$file_info" | cut -d ' ' -f 4)
+    file_size=$(echo "$file_info" | cut -d ' ' -f 5)
+    modification_date=$(echo "$file_info" | cut -d ' ' -f 6,7)
+    modification_time=$(echo "$file_info" | cut -d ' ' -f 8)
+
+    # Display file information
+    echo "Filename: $filename"
+    echo "File access permissions: $file_permissions"
+    echo "Number of links: $num_links"
+    echo "Owner of the file: $owner"
+    echo "Group to which it belongs: $group"
+    echo "Size of file: $file_size"
+    echo "File modification date: $modification_date"
+    echo "File modification time: $modification_time"
+ }
+
+ # Main script
+ if [ $# -eq 0 ]; then
+    echo "Error: No filename provided."
+    exit 1
+ fi
+
+ filename=$1
+ display_file_info "$filename"
+
+========================================================================================================================================
+ OUTPUT:
+
+ Filename: emp.sh
+ File access permissions: -rw-rw-r--
+ Number of links: 1
+ Owner of the file: mca2316
+ Group to which it belongs: mca2316
+ Size of file: 2539
+ File modification date: Feb 23
+ File modification time: 06:56

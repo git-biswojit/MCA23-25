@@ -1,0 +1,28 @@
+						    DEPARTMENT OF COMPUTER SCIENCE
+							  GUJARAT UNIVERSITY
+ NAME		:  NAINESH KAHAR						     	PAGE NO.	:    
+ COURSE		:  MCA 2							     	DATE		:  07  /  03  /  2024
+ ROLL NO.	:  16
+ SUBJECT	:  OPERATING SYSTEM
+ ASSIGNMENT	:  1
+ PROGRAM NO.	:  2
+ SUBMITTED TO	:  PROF. JAY PATEL
+========================================================================================================================================
+ P.2	WRITE A SCRIPT TO REVERSE A SIX-DIGIT NUMBER.
+========================================================================================================================================
+ echo "enter the number:"
+ read n
+ i=0
+ while [ $n -gt 0 ]
+ do
+    ans=`expr $n % 10 `
+    echo -n $ans
+    n=`expr $n / 10 `
+ done
+
+========================================================================================================================================
+ OUTPUT :
+
+ enter the number:
+ 123456
+ 654321

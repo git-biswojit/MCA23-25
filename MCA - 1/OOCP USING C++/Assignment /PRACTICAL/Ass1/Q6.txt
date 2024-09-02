@@ -1,0 +1,40 @@
+						    DEPARTMENT OF COMPUTER SCIENCE
+							  GUJARAT UNIVERSITY
+ NAME		:  NAINESH KAHAR						     	PAGE NO.	:    
+ COURSE		:  MCA 2							     	DATE		:  07  /  03  /  2024
+ ROLL NO.	:  16
+ SUBJECT	:  OPERATING SYSTEM
+ ASSIGNMENT	:  1
+ PROGRAM NO.	:  6
+ SUBMITTED TO	:  PROF. JAY PATEL
+========================================================================================================================================
+ P.6	WRITE A SCRIPT WHICH HAS THE FUNCTIONALITY SIMILAR TO HEAD AND TAIL COMMANDS.
+========================================================================================================================================
+ filename=str.sh
+
+ echo "Displaying the first 10 lines:"
+ count=0
+ while IFS= read -r line && [ "$count" -lt 10 ]; do
+    echo "$line"
+    count=$((count + 1))
+ done < "$filename"
+
+ echo -e "\nDisplaying the last 10 lines:"
+ mapfile -tn 10 lines < "$filename"
+ for line in "${lines[@]}"; do
+    echo "$line"
+ done
+========================================================================================================================================
+ OUTPUT :
+
+ [mca2316@agni nainesh]$ sh str.sh
+ Displaying the first 10 lines:
+ #include<stdio.h>
+ #include<string.h>
+ void main()
+ {
+        string name="nainesh";
+        int len;
+        len=strlen(name);
+        return len;
+ }
